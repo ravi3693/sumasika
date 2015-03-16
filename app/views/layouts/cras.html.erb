@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sumasika</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Drew - A Multipurpose Landing Page Template</title>
+  <meta name="author" content="David Rozando">
+  <meta name="keywords" content="responsive, parallax, bootstrap, html5 template, one page, landing page">
+   <meta name="description" content="Drew - A Multipurpose Landing Page Template">
+  <%= stylesheet_link_tag  'homepage', media: 'all', 'data-turbolinks-track' => true %>
+  <!--  <link id="color-css" rel="stylesheet" href="assets/homecss/style.css"> -->
+  
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+   <link id="color-css" rel="stylesheet" href="assets/colors/orange.css">
+   
+    
+
+ </head>
+<body class="enable-animations enable-preloader">
+  <div id="document" class="document">
+
+      <%= render :partial=>'layouts/header' %>
+
+          <%= yield %>
+      <%= render :partial=>'layouts/footer'%>
+
+
+  </div>
+
+
+    <script src="assets/jquery-1.11.2.min.js"></script>
+    <script src="assets/picturefill.min.js"></script>
+    <script src="assets/jpreloader.min.js"></script>
+    <script src="assets/bootstrap.min.js"></script>
+    <script src="assets/smoothscroll.min.js"></script>
+    <script src="assets/jquery.nav.min.js"></script>
+    <script src="assets/jquery.inview.min.js"></script>
+    <script src="assets/jquery.counterup.min.js"></script>
+    <script src="assets/jquery.stellar.min.js"></script>
+    <script src="assets/script.js"></script>assets  
+
+</body>
+</html>

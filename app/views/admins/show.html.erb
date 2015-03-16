@@ -1,0 +1,40 @@
+<h3>User Details</h3>
+<ul>
+	<li>Name :: <%= @detail.user.first_name %> <%=@detail.user.last_name %></li>
+	<li>Address :: <%= @detail.user.address %></li>
+	<li>Country :: <%= Country.new(@detail.user.country).name %></li>
+</ul>
+
+<div class="row">
+	<div class="col-xs-12">
+		<table class="table table-bordered table-condensed table-striped">
+			<legend>Transactions</legend>
+			<thead>
+				<tr>
+					<th>Sender Name</th>
+					<th>Receipient Name</th>
+					<th>Receipient Mobile number</th>
+					<th>Money</th>
+					<th>Sent Date</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+			 	<tr>
+					<td><%= @detail.user.first_name %></td>
+					<td><%= @detail.first_name %></td>
+					<td><code><%= @detail.mtn %></code></td>
+					<td><%= @detail.money %></td>
+					<td><%= @detail.created_at.strftime("%x") %> UTC</td>
+					
+				</tr>
+			</tbody>
+		</table>
+		<%= form_tag admin_approve_path do %>
+			<%= hidden_field_tag 'baser', params[:id] %>
+			<%= submit_tag 'Approve', :class => 'btn btn-success pull-right' %>
+		<%end %>
+
+	</div>
+</div>
+

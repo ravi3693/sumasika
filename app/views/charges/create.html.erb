@@ -1,0 +1,43 @@
+<div class="panel panel-default">
+ <div class="panel-heading" style= "text-align:center;background: #E4DDDD">
+    <!-- <span class="glyphicon glyphicon-ok" style="font-size: 42px;"></span> -->
+	<h2><%= @symbol %><%=@amount/100%> at sumasika</h2>
+	<hr>
+	<label for="4242"><b>XXXX XXXX XXXX 4242</b></label>
+ </div>
+ <div class="panel-body">
+	<table class = "table table-hover">
+		<thead class="thead" style="background:#BEB1B1;">
+	  <tr>
+      <th class ="text-center" > <%= @date.strftime("%b%d") %>,<%= @date.strftime("%Y") %></th>
+      <th class ="text-center">#1559-2372</th>
+      </tr>
+
+		</thead>
+		<tbody>
+    <tr style="color:#808080">
+     
+      <td class="text-center">Description </td>
+      <td class="text-center" >Price</td>
+      
+    </tr>
+    <tr>
+    	<td class="text-center">Rails Stripe customer </td>
+      <td class="text-center" > <%= @amount/100 %></td>
+    </tr>
+    <tr>
+      <td class="text-center">Reference id</td>
+      <td class="text-center" > <b><%=params[:tokener] %></b> </td>
+    </tr>
+
+    </tbody>
+	</table>
+	<div class="panel-body" style= "text-align:center;background: #E4DDDD">
+		<h4>You can contact us with any questions by emailing</h4>
+		<a href="nanaoforibrown@aol.com">nanaoforibrown@aol.com</a>
+		<hr>
+		<p style="text-align:center">Something wrong with the email? View it in your browser.</p>
+		<p style="text-align:center">You are receiving this email because you made a purchase at <a href="www.sumasika.com" style="color:blue">sumasika</a></p>
+	</div>
+</div>
+				

@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html class="html" lang="en-GB">
+ <head>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+  <title>Sumasika</title>
+  <!-- CSS -->
+  
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+  <script src="scripts/html5shiv.js?4241844378" type="text/javascript"></script>
+  <![endif]-->
+    <!--HTML Widget code-->
+  
+			<!--[if gte IE 8] -->
+				<!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"> -->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+			<!-- <![endif]-->
+			<!--[if IE 7]>
+				<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
+			<![endif]-->
+			<style>
+				.icon-block:before, .icon-block {
+					display: block;
+				}
+			</style>
+		
+ </head>
+ <body style="background:#e8ebef">
+ <%=  render :partial => 'layouts/alert' %>
+ 
+ <div class="navbar" role="navigation">
+   <div class="navbar-header">
+     <div class="logo"><h1>Sumasika</h1></div>
+     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+       <span class="sr-only">Toggle navigation</span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+     </button> 
+   </div>   
+ </div> 
+<div class="template-page-wrapper">
+  <div class="navbar-collapse collapse templatemo-sidebar">
+    <ul class="templatemo-sidebar-menu">
+      <li><a href="<%=admin_path %>"><i></i>Dashboard</a></li>
+      <li><a href="<%=admin_past_path %>"><i></i>Past Transactions</a></li>
+      <li><a href="<%=admin_pending_path%>"><i></i>Pending Transactions</a></li>
+      <li><a href="<%=admin_activation_path %>"><i></i>Activation</a></li>
+      <li><a href="<%=admin_sessions_destroy_path%>"><i></i>Sign out</a></li>
+    </ul>
+  </div>
+  <div class="templatemo-content-wrapper">
+    <div class="templatemo-content">
+      <%= yield %>
+    </div>
+  </div>
+</div> 
+ 
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+ <script type="text/javascript">
+           jQuery(function($) {
+               $('#dropdownview').click(function () {
+                   $('#viewsubmenu').toggle();
+               })
+           });
+       </script>
+ </body>
+</html>

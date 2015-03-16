@@ -1,0 +1,40 @@
+<div class="site_container" style="margin-top:55px;">
+	<div class="row" >
+	<div class="col-xs-6">
+		<div class="row" style="text-align:center; position:fixed;">
+		<h1 class="signuphed">Admin Login</h1>
+		</div>
+	</div>
+	<div class="col-xs-6">
+		<div class="well">
+ 		<%if !flash[:notice].nil? %>
+	 		<div class="row">
+	 			<div class="col-xs-12">
+	 				<div class="alert alert-success" role="alert" style="text-align: center;">
+	 					<span class="glyphicon glyphicon-saved" style="font-size:20px;"></span>
+	 					<span style="font-size:20px;"><%= flash[:notice] %></span> 
+	 				</div>
+	 			</div>
+	 		</div>
+ 		<%end %>
+			<%=form_tag admin_sessions_create_path, :class => 'form' do |f|   %>
+			 <div class="form-group">
+		     	<%= label_tag 'exampleInputEmail1', 'Email address' %>
+			    <!-- <label for="exampleInputEmail1">Email address</label> -->
+			    <%= text_field_tag 'email' , "",class: 'form-control',placeholder: 'Enter Email',:required => true %>
+			  </div>
+			  <div class="form-group">
+			    <%= label_tag 'exampleInputPassword1', 'Password' %>
+			    <%= password_field_tag 'password' , '',class: 'form-control',placeholder: 'Enter password', :required => true %>
+			  </div>
+			   <%= submit_tag 'Login',class: 'btn btn-success',name: 'login' %>
+			<% end -%>
+		</div>
+	</div>
+	<!-- <div class="row">
+		<div class="col-xs-4">
+			<span>Dont Have An Account?</span>
+			<a href="#">Sign up</a>
+		</div>
+	</div> -->
+</div>

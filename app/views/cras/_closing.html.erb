@@ -1,0 +1,132 @@
+<section id="closing" class="closing-section section-dark section">
+
+        <div class="section-background">
+
+          <!-- IMAGE BACKGROUND -->
+          <div class="section-background-image parallax-background" data-stellar-background-ratio="0.4"></div>
+
+        </div>
+
+        <div class="container">
+		<div style="padding: 0px 88px;">
+	        <div style="font-size:9px;float:left;" id="one">
+	               
+	              	  	<label style="font-size:15px;"> $125k 15minutes ago</label></br>
+	                	<%= image_tag 'map-image.png' %>
+	               
+	        </div>
+	        <div style="font-size:9px;float:left;margin-left:260px;" id="two">
+	               
+	              	  	<label style="font-size:15px;"> £200k 25minutes ago</label></br>
+	                	<%= image_tag 'map-image.png' %>
+	               
+	        </div>
+	        <div style="font-size:9px;float:left;margin-left: 80px;" id="three">
+	               
+	              	  	<label style="font-size:15px;"> €300k 35minutes ago</label></br>
+	                	<%= image_tag 'map-image.png' %>
+	               
+	        </div>
+
+
+
+	        
+	   </div>
+	   <div style="padding: 34px 192px;">
+	        <div style="font-size:9px;float:left;" id="four">
+	               
+	              	  	<label style="font-size:15px;"> £400k 15minutes ago</label></br>
+	                	<%= image_tag 'map-image.png' %>
+	               
+	        </div>
+	        <div style="font-size:9px;float:left;margin-left:150px;" id="five">
+	               
+	              	  	<label style="font-size:15px;"> $500 25minutes ago</label></br>
+	                	<%= image_tag 'map-image.png' %>
+	               
+	        </div>
+	         <div style="font-size:9px;float:left;margin-left: 559px;" id="six">
+	               
+	              	  	<label style="font-size:15px;"> €600 25minutes ago</label></br>
+	                	<%= image_tag 'map-image.png' %>
+	               
+	        </div>
+	        
+	        
+
+	        
+	    </div>
+
+        
+        
+
+       </div>
+
+</section>
+
+<style type="text/css">
+  #two
+  {
+    display:none;
+  }
+ /* #three
+  {
+    display:none;
+  }*/
+  #four
+  {
+    display:none; 
+  }
+  #six
+  {
+  	display:none; 	
+  }
+</style>
+
+ <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+$( document ).ready(function() {
+    // $("#dropshadow").fadeIn(1000)
+    setInterval(function(){
+     $("#one").is(":visible") ? $("#one").fadeOut(2000) : $("#one").fadeIn(4000);
+    $("#two").is(":visible") ? $("#two").fadeOut(2000) : $("#two").fadeIn(4000);
+    
+
+},3000);
+
+    
+
+});
+</script>
+<script>
+$( document ).ready(function() {
+    
+    setInterval(function(){
+     
+     $("#three").is(":visible") ? $("#three").fadeOut(2000) : $("#three").fadeIn(4000);
+    $("#four").is(":visible") ? $("#four").fadeOut(2000) : $("#four").fadeIn(4000);
+
+    
+    
+},3000);
+
+    
+
+});
+</script>
+<script>
+$( document ).ready(function() {
+    
+    setInterval(function(){
+     
+     $("#five").is(":visible") ? $("#three").fadeOut(2000) : $("#three").fadeIn(4000);
+    $("#six").is(":visible") ? $("#four").fadeOut(2000) : $("#four").fadeIn(4000);
+
+    
+    
+},3000);
+
+    
+
+});
+</script>

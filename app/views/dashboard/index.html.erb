@@ -1,0 +1,203 @@
+<link rel="stylesheet" href="/assets/switch_style.css">
+
+<%= form_tag dashboard_create_path, :id => 'send_money', :class => 'form-inline' do %>
+<div class="panel panel-default">
+	<div class="panel-heading base-background">
+	      <h3>Send Money To Any One</h3>
+	</div>
+	<div class="panel-body" style="text-align:cener">
+		    <h4 class="base-color text-glow"><b>Amount Details:</b></h4>
+		    <div class="row">
+		    
+		      <div class="col-xs-12">
+			      <div class="form-group">
+			      	<dl class="dl-horizontal">
+
+							<dt>
+								<label class="" for="money">You want to send</label>
+							</dt>
+							<dd> 
+								<div class="input-group">
+			                <div class="input-group-btn">
+								<%= select 'user','currency', Synthesize::CURRENCIES, {:selected => 'USD'}, {class: 'form-control'} %>
+							</div>
+                			<input type="text" class="form-control input-xs" id="user_money" name='user[money]' style="width:165px" placeholder='0.00' >
+                    		</div>
+                    	</dd>
+					</dl>	
+                  </div>
+	            </div>   
+				<div class="col-xs-6">
+					  <div class="form-group">
+				        <dl class="dl-horizontal">
+				       		<dt>
+                       			<label class="" for="exampleInputAmount">Receipt Receives</label>
+                       		</dt>
+                       		<dd>
+	                           <div class="input-group">
+	                            <div class="input-group-addon">GHS</div>
+	                           <input type="text" class="form-control" id="gamount" style="width:139px" disabled>
+	                        </div>
+                     	</dd>
+                     	</dl>
+                     </div>
+				</div>
+				<div class="col-xs-6">
+					  
+				        <dl class="dl-horizontal">
+				       		<dt>
+                       			<label class="" for="exampleInputAmount">Include Tx Fees</label>
+                       		</dt>
+                       		<dd>
+	                           <div class="input-group">
+	              					<div class="switch">
+	              					    <input type="radio" class="switch-input" name="user[apply_charges]" value="true" id="week2">
+	              					    <label for="week2" class="switch-label switch-label-off" style="color:#FFF;"><strong>YES</strong></label>
+	              					    <input type="radio" class="switch-input" name="user[apply_charges]" value="false" id="month2" checked>
+	              					    <label for="month2" class="switch-label switch-label-on" style="color:#FFF;">NO</label>
+	              					    <span class="switch-selection"></span>
+	              					</div>          	 
+	                           </div>
+	                        </dd>
+	                    </dl>
+                     	<div style="width:100%;margin-left:180px;">
+                     	<span id="help" style="color:red;display:none;">we get 5% of money from your account</span>
+                     	</div>
+                </div>
+                <div class="col-xs-6">
+                	<p class="help-block well">
+                		Transaction charges apply for each transaction. If you wish to transfer money including transaction charges, choose YES . <br>
+                		Eg:: Send money :: $20 <br>
+                			 Tx Fees :: 5% ($1)<br>
+                			 Include Tx Fee :: No<br>
+                			 Charge :: $21
+					</p>
+                </div>
+            </div>
+			<hr>
+			<h4 class="base-color text-glow"><b>Recipient Details</b> </h4>
+
+			<div class="row"> <!-- Receipient details -->
+			<div class="col-xs-5" >		
+                <div class="form-group">
+                	<dl class="dl-horizontal">
+                	<dt>
+	                     <label class="" for="first_name">First Name</label>
+	                </dt>		
+	                <dd>
+                        <div class="input-group">
+                           <input type="text" class="form-control" id="first_name" name="user[first_name]" style="width:198px" placeholder='Eg:: John'>
+	                 	<span class="help-block">This helps at verification</span>
+                         </div>
+	                 </dd>
+                     </dl>
+                 </div>
+			</div>
+			<div class="col-xs-6">				
+                    <div class="form-group">
+                    <dl class="dl-horizontal">
+                    	<dt>
+	                     	<label class="" for="last_name">Last Name</label>
+	                     </dt>
+	                     <dd>
+	                        <div class="input-group">
+	                           <input type="text" class="form-control" id="last_name" name='user[last_name]' style="width:198px" placeholder='Doe'>
+	                        </div>
+	                     </dd>
+                     </dl>
+                    </div>
+			</div>
+
+			<div class="col-xs-12">				        
+                 <div class="form-group">
+                  <dl class="dl-horizontal">
+                  	<dt>
+	                   <label class="" for="mtn">Recipient Number</label><br>
+	                   <label> (MTN, TIGO, AIRTEL)</label>
+	                 </dt>
+	                 <dd>
+	                        <div class="input-group">
+	                           <input type="text" class="form-control" id="mtn" name="user[mtn]" style="width:139px" placeholder='+233 244 2120 125'> 
+	                           <a href="javascript:void(0)"  name="verify" id="verify" value="verify" class="btn btn-primary active">
+                 	verify
+                 </a>
+
+
+	                        </div>
+
+						<span class='help-block'>Provide Mtn number with country code and click on verify</span>
+	                  </dd>
+	                 </dl>
+	             </div>
+               
+			</div>
+			<div class="col-xs-8" style="text-align:center;margin-top:-20px;">
+			<label id="alert"> </label>
+			</div>
+			<!-- <div class="col-xs-6">				        
+                 <div class="form-group">
+        <a href="javascript:void(0)"  name="verify" id="verify" value="verify" class="btn btn-primary active">
+                 	verify
+                 </a>
+
+	             </div>
+               
+			</div> -->
+			</div> <!-- Receipient Details -->
+      <hr> 
+       <input type="submit" class="btn btn-success pull-right disabled" id="buttonid" value="Preview">
+     </div>
+
+</div>
+<%end %>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#user_money').keyup(function(){
+		values_taken()
+	});
+	$("#person_currency").change(function(){
+		values_taken()
+	});
+	function values_taken(){
+		money = $('#user_money').val();
+		window.currency = $('#user_currency').val();
+		amount= parseFloat(money);
+		$('#gamount').val('loading...');
+		$.ajax({
+  			url: "<%=root_url %>jsoners/ghana/" + currency + '/1',
+  			context: document.body
+		}).done(function(r) {
+			window.rate = r;
+			rate = window.rate;
+			$('#gamount').val(amount*rate);
+		}); 
+	}
+	
+	$("#verify").click(function(){
+			var mtnval= $('#mtn').val();
+			var mtnno = mtnval.split('+')[1]
+			$.ajax({
+  			  url: "<%=root_url %>jsoners/validator/"+mtnno,
+  			  context: document.body
+			}).done(function(r) {
+				if( r == 'true')
+			 	{
+
+			 		$("#mtn").css("border-color", "#3c763d");
+			 			$("#alert").html("Your mtn number verified successfully");
+			 			$('#buttonid').removeClass( "disabled" );
+			 	}
+			 	else
+			 	{
+			 		$("#mtn").css("border-color", "red");	
+			 		$("#alert").html("Enter mtn mobile number with country code. Eg:: +233 244 2120 125");
+			 			
+			 	}
+		});
+
+	});
+		
+
+});
+	
+</script>
