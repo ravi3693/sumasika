@@ -5,21 +5,27 @@
           <h2 class="section-heading text-center">Meet The Experts</h2>
 
           <div class="team-row row">
-
+    <% @expert.each do |f| %>
             <!-- TEAM MEMBER 1 -->
             <div class="col-lg-2 col-md-4 col-sm-6" data-animation="fadeIn">
               <div class="team-member">
-                <img class="team-member-picture" src="assets/team1-u15873-r-fr.png" alt="">
+                <!-- <img class="team-member-picture" src="assets/team1-u15873-r-fr.png" alt=""> -->
+                <%= image_tag f.image.thumb('369x369#').url if f.image %>
+
                 <div class="team-member-text">
-                  <h4 class="team-member-name">Jason Castillo</h4>
-                  <div class="team-member-position">CEO &amp; Co-Founder</div>
-                  <p class="team-member-description">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                  <h4 class="team-member-name"><%= f.name %></h4>
+                  <div class="team-member-position">CEO &amp; Co-Founder <%= f.designation %></div>
+                  <p class="team-member-description">
+                    <%= raw f.description  %>
+                  </p>
                 </div>
               </div>
             </div>
+            <div class="hidden-md hidden-lg clear"></div>
+     <% end %>
 
             <!-- TEAM MEMBER 2 -->
-            <div class="col-lg-2 col-md-4 col-sm-6" data-animation="fadeIn">
+            <!-- <div class="col-lg-2 col-md-4 col-sm-6" data-animation="fadeIn">
               <div class="team-member even">
                 <img class="team-member-picture" src="assets/team2.jpg" alt="">
                 <div class="team-member-text">
@@ -28,12 +34,12 @@
                   <p class="team-member-description">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
                 </div>
               </div>
-            </div>
+            </div> -->
 
-            <div class="hidden-md hidden-lg clear"></div>
+            <!-- <div class="hidden-md hidden-lg clear"></div> -->
 
             <!-- TEAM MEMBER 3 -->
-            <div class="col-lg-2 col-md-4 col-sm-6" data-animation="fadeIn">
+<!--             <div class="col-lg-2 col-md-4 col-sm-6" data-animation="fadeIn">
               <div class="team-member">
                 <img class="team-member-picture" src="assets/team3-u15888-r-fr.png" alt="">
                 <div class="team-member-text">
@@ -43,11 +49,11 @@
                 </div>
               </div>
             </div>
-
-            <div class="hidden-sm hidden-lg clear"></div>
+ -->
+            <!-- <div class="hidden-sm hidden-lg clear"></div> -->
 
             <!-- TEAM MEMBER 4 -->
-            <div class="col-lg-2 col-md-4 col-sm-6" data-animation="fadeIn">
+            <!-- <div class="col-lg-2 col-md-4 col-sm-6" data-animation="fadeIn">
               <div class="team-member even">
                 <img class="team-member-picture" src="assets/team4.jpg" alt="">
                 <div class="team-member-text">
@@ -56,12 +62,12 @@
                   <p class="team-member-description">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
                 </div>
               </div>
-            </div>
+            </div> -->
 
-            <div class="hidden-md hidden-lg clear"></div>
+            <!-- <div class="hidden-md hidden-lg clear"></div> -->
 
             <!-- TEAM MEMBER 5 -->
-            <div class="col-lg-2 col-md-4 col-sm-6" data-animation="fadeIn">
+            <!-- <div class="col-lg-2 col-md-4 col-sm-6" data-animation="fadeIn">
               <div class="team-member">
                 <img class="team-member-picture" src="assets/item_0003_Layer-1.jpg" alt="">
                 <div class="team-member-text">
@@ -70,10 +76,10 @@
                   <p class="team-member-description">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <!-- TEAM MEMBER 6 -->
-            <div class="col-lg-2 col-md-4 col-sm-6" data-animation="fadeIn">
+            <!-- <div class="col-lg-2 col-md-4 col-sm-6" data-animation="fadeIn">
               <div class="team-member even">
                 <img class="team-member-picture" src="assets/item_0000_Layer-4.jpg" alt="">
                 <div class="team-member-text">
@@ -82,7 +88,7 @@
                   <p class="team-member-description">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
                 </div>
               </div>
-            </div>
+            </div> -->
 
           </div>
 

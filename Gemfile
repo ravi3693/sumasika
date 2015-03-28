@@ -56,3 +56,4 @@ gem 'pry-rails', :group => :development
 gem 'twilio-ruby', '~> 3.12'
 gem 'phonelib'
 gem 'nprogress-rails'
+gem 'ckeditor_rails'

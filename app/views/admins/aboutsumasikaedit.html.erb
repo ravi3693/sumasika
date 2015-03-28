@@ -1,0 +1,71 @@
+<div class="row">
+	<div class="col-xs-12">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				
+					Create New About Sumasika
+				
+				
+			</div>
+
+<div class="row" style="margin-top:25px;">	
+  <div class="col-xs-1"></div>
+  <div class="col-xs-10">
+      <%=form_for @aboutsumasikaedit, :url => {:action => 'editcreate'},:html => {:class => "form-horizontal"} do |f| %>
+
+            <%= hidden_field_tag 'aboutconttent[id]', @aboutsumasikaedit.id %>
+        <div class="form-group">
+          <label for="inputdesc" class="col-sm-2 control-label" style="font-weight: bold;">Description</label>
+          <div class="col-sm-10">
+            <%= f.text_area :content, :class => 'ckeditor' %>
+
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputimage" class="col-sm-2 control-label" style="font-weight: bold;">Photo</label>
+          <div class="col-sm-10">
+            <%= f.file_field :image , class: 'form-control' %>
+          <div class="row">
+          <div class="col-xs-12" style="text-align:center;margin-top:12px;">
+            <%= image_tag @aboutsumasikaedit.image.thumb('200x128#').url if @aboutsumasikaedit.image    %>
+          </div>
+          </div>
+          </div>
+          
+          
+          
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label" style="font-weight:bold;">postone</label>
+          <div class="col-sm-10">
+            <%= text_field_tag 'aboutconttent[titleone]' ,@aboutsumasikaedit.titleone,class: 'form-control',:required => true %>
+          </div>
+        </div>
+         <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label" style="font-weight: bold;">posttwo</label>
+          <div class="col-sm-10">
+            <%= text_field_tag 'aboutconttent[titletwo]' ,@aboutsumasikaedit.titletwo,class: 'form-control',:required => true %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label" style="font-weight: bold;">postthree</label>
+          <div class="col-sm-10">
+            <%= text_field_tag 'aboutconttent[titlethree]' ,@aboutsumasikaedit.titlethree ,class: 'form-control',:required => true %>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+
+      <%end%>
+      </div>
+<div class="col-xs-1"></div>
+</div>
+			
+		</div>
+		
+	</div>
+</div>

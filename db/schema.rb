@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150216101741) do
+ActiveRecord::Schema.define(version: 20150327085235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "aboutconttents", force: true do |t|
+    t.string   "content"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.string   "titleone"
+    t.string   "titletwo"
+    t.string   "titlethree"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "accounts", force: true do |t|
     t.string   "mask"
@@ -29,6 +40,16 @@ ActiveRecord::Schema.define(version: 20150216101741) do
     t.string   "event_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "experts", force: true do |t|
+    t.string   "name"
+    t.string   "designation"
+    t.text     "description"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "managers", force: true do |t|

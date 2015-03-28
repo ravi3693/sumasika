@@ -1,6 +1,10 @@
 class CrasController < ApplicationController
   def index
-    @user = my_session unless my_session.nil?  	
+
+    @user = my_session unless my_session.nil?
+    @about = Aboutconttent.find_by_id(11)
+    @expert = Expert.all
+    
   end
 
   def howitworks

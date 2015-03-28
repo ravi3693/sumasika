@@ -44,4 +44,93 @@ class AdminsController < ApplicationController
     redirect_to admin_past_path if @syn.save
   end
 
+  def aboutsumasika
+    @aboutsumasika=Aboutconttent.all
+  end
+
+  def addaboutsumasika
+    @aboutconntent=Aboutconttent.new()
+  end
+
+  def create
+    
+    @About_conttent=Aboutconttent.new(req_params)
+    
+    if @About_conttent.save
+      
+      flash[:notice] = "Added Sucessfully"
+      
+      redirect_to admin_aboutsumasika_path
+    end
+  end
+
+  def delete
+    @delete=Aboutconttent.destroy(params[:id])
+
+    if @delete
+      flash[:notice] = "One Record Deleted Sucessfully"
+      redirect_to admin_aboutsumasika_path
+    end
+  end
+
+  def aboutsumasikaedit
+    @aboutsumasikaedit=Aboutconttent.find_by_id(params[:id])
+  end
+
+  def editcreate
+    
+    @editcreate=Aboutconttent.find_by_id(params[:aboutconttent][:id]).update(:content => params[:aboutconttent][:content],:titleone => params[:aboutconttent][:titleone],:titletwo => params[:aboutconttent][:titletwo],:titlethree => params[:aboutconttent][:titlethree])
+    if @editcreate
+        Aboutconttent.find_by_id(params[:aboutconttent][:id]).update(:image => params[:aboutconttent][:image]) unless params[:aboutconttent][:image].nil?
+        redirect_to admin_aboutsumasika_path
+    end
+    
+
+  end
+  def addexperts
+    @addexperts=Expert.new()
+  end
+
+  def expertcreate
+
+    @expert=Expert.new(req_expertparams)
+    if @expert.save
+      flash[:notice]="Experts Added Sucessfully"
+      redirect_to admin_experts_path
+    end
+  end
+
+  def experts
+
+    @allexperts=Expert.all
+    
+  end
+  def editexpert
+    @expert= Expert.find(params[:id])
+  end
+  def expertedit
+    @expertedit=Expert.find(params[:expert][:id]).update(:name =>params[:expert][:name] ,:designation =>params[:expert][:designation],:description =>params[:expert][:description])
+    if @expertedit
+      Expert.find(params[:expert][:id]).update(:image =>params[:expert][:image]) unless params[:expert][:image].nil?
+      redirect_to admin_experts_path
+    end
+  end
+  def expertdel
+    @expertdel=Expert.destroy(params[:id])
+    binding.pry
+    if @expertdel
+      redirect_to admin_experts_path
+    end
+  end
+
+  private
+  def req_params
+
+    params.require(:aboutconttent).permit(:content,:titleone,:titletwo,:titlethree,:image)
+
+  end
+  def req_expertparams
+     params.require(:expert).permit(:name,:designation,:description,:image)    
+  end
+
 end

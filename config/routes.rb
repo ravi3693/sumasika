@@ -15,6 +15,18 @@ Rails.application.routes.draw do
   get 'admin/activation' => 'admins#activation'
   post 'admin/approve' => 'admins#approve'
   get 'admin/approved/:uid' => 'admins#approved', as: 'admin_approved' 
+  get 'admin/aboutsumasika' => 'admins#aboutsumasika', as: 'admin_aboutsumasika'
+  get 'admins/addaboutsumasika' 
+  post 'admins/create'
+  get 'admins/delete/:id' => 'admins#delete', as: 'admin_delete'
+  get 'admins/aboutsumasikaedit/:id' => 'admins#aboutsumasikaedit', as: 'admin_aboutsumasikaedit'
+  patch 'admins/editcreate'
+  get 'admins/experts' => 'admins#experts', as: 'admin_experts'
+  get 'admins/addexperts' => 'admins#addexperts', as: 'admin_addexperts'
+  post 'admins/expertcreate'
+  get 'admins/editexpert/:id' => 'admins#editexpert', as: 'admins_editexpert'
+  patch 'admins/expertedit'
+  get 'admins/expertdel/:id' => 'admins#expertdel', as: 'admins_expertdel'
   
  # Signup Routes
   get 'members/index'

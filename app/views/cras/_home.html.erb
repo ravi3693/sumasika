@@ -5,15 +5,6 @@
           <!-- IMAGE BACKGROUND -->
           <div class="section-background-image parallax-background" data-stellar-background-ratio="0.4"></div>
 
-          <!-- VIDEO BACKGROUND -->
-          <!-- <div class="section-background-video section-background-dot-overlay parallax" data-stellar-ratio="0.4">
-            <video preload="auto" autoplay loop muted poster="images/backgrounds/video-fallback-bg.jpg">
-              <source type="video/mp4" src="videos/video-bg.mp4">
-              <source type="video/ogg" src="videos/video-bg.ogv">
-              <source type="video/webm" src="videos/video-bg.webm">
-            </video>
-          </div> -->
-
         </div>
 
         <div class="container">
@@ -30,7 +21,7 @@
               </div> -->
                 <div class="hero-heading" data-animation="fadeIn">
 
-        <h2 class="hero-title" style="font-size: 35px;">Send Money to Ghana-cheaper and Faster</h2>
+        <h2 class="hero-title" style="font-size: 34px;">Send Money to Africa-cheaper and Faster</h2>
 
                   <p class="hero-tagline">Try the hottest new way to send or pay</p>
 
@@ -38,7 +29,11 @@
 
                 <p class="hero-buttons">
 
+                <% if session[:user_id].nil? %>
                   <a href="sessions/new" class="btn btn-lg btn-primary" style="width: 170px;">Login</a>
+                <% else  %>
+                  <a href="sessions/destroy" class="btn btn-lg btn-primary" style="width: 170px;">Logout</a>
+                <% end %>
                   <a href="members/new" class="btn btn-lg btn-primary">Sign Up Now</a>
                   
                     
