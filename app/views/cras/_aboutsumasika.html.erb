@@ -9,7 +9,11 @@
             <!-- DESCRIPTION IMAGE -->
             <div class="about-image col-md-6" data-animation="fadeIn">
               <!-- <img src="assets/contents/about.jpg" alt="Description Image"> -->
-            <%= image_tag @about.image.thumb('540x720#').url if @about.image    %>
+          <% if @about.image %>
+            <%= image_tag @about.image.thumb('540x720#').url %>
+          <% else %>
+            <img src="assets/contents/about.jpg" alt="Description Image">
+          <% end %>
             </div>
 
             <!-- DESCRIPTION TEXT -->
