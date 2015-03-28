@@ -1,7 +1,7 @@
 class MembersController < ApplicationController
 before_action :check_email, :only => [:create]
 before_action :validate_captcha, :only => [:create]
-before_action :pass_check,  :only => [:create]
+# before_action :pass_check,  :only => [:create]
   def index
 
   end
@@ -77,12 +77,12 @@ before_action :pass_check,  :only => [:create]
         redirect_to members_new_path, :flash => { :notice => "User already exists with this email"}
       end
     end
-    def pass_check
+    # def pass_check
      
-      unless params[:user][:password] == params[:user][:confirmpassword]
+    #   unless params[:user][:password] == params[:user][:confirmpassword]
 
-        flash[:error] = "Password doesnt match confirmation"
-        redirect_to members_new_path
-     end
-    end
+    #     flash[:error] = "Password doesnt match confirmation"
+    #     redirect_to members_new_path
+    #  end
+    # end
 end

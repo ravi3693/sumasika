@@ -3,7 +3,10 @@ class Reguser < ApplicationMailer
     @user = user
     mail(to: @user["email"], subject: 'Your Registration Is Completed')
   end
-
+  def sendmail(user)
+    @user = user
+    mail( :to => @user["email"], subject: 'Your Money Transaction Was Completed')
+  end
   def contact_email(user)
     @user = user
     mail( :to => @user["email"], :subject => 'Sumasika  :: Requesting Helpline Acknowledgement')
@@ -15,6 +18,5 @@ class Reguser < ApplicationMailer
   def forgot_pwd(user)
     @user = user
     mail( :to => @user["email"], :subject => 'Sumasika  :: Forget Password Request')
-
   end
 end

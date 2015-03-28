@@ -31,11 +31,8 @@ class ChargesController < ApplicationController
 	  
 	  customer.description = "Testing description need to update"
 	  customer.card = params[:stripeToken] # obtained with Stripe.js
-		rescue Stripe::InvalidRequestError => e
-			flash[:error] = e.message
-	  		redirect_to dashboard_index_path 
-		 
-	  if customer.save
+      if customer.save
+	  	Reguser.sendmail(@user).deliver_now
 		  charge = Stripe::Charge.create(
 		    :customer    => customer.id,
 		    :amount      => @amount.to_i,
