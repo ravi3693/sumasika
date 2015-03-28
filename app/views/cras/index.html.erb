@@ -21,7 +21,12 @@
 
       <!-- NUMBERS
       ================================= -->
+      
+      <% unless @expert.empty? %>
+
       <%= render :partial => 'cras/numbers' %>
+
+      <% end %>
 
       <!-- VIDEO SECTION
       ================================= -->

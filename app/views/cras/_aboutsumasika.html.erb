@@ -1,3 +1,4 @@
+<% unless @about.nil? %>
 <section id="about" class="about-section section">
 
         <div class="container">
@@ -9,7 +10,8 @@
             <!-- DESCRIPTION IMAGE -->
             <div class="about-image col-md-6" data-animation="fadeIn">
               <!-- <img src="assets/contents/about.jpg" alt="Description Image"> -->
-          <% if @about.image %>
+              
+          <% unless @about.image.nil? %>
             <%= image_tag @about.image.thumb('540x720#').url %>
           <% else %>
             <img src="assets/contents/about.jpg" alt="Description Image">
@@ -27,6 +29,7 @@
                 <li>
                   <span class="icon-list-icon fa fa-hand-o-up" data-animation="bounceIn" style="font: 100;"></span>
                   <h4 class="icon-list-title">Click Through</h4>
+
                   <p><%= raw @about.titleone  %></p>
                 </li>
                 <li>
@@ -47,3 +50,4 @@
         </div>
 
       </section>
+<% end %>
