@@ -27,6 +27,14 @@ Rails.application.routes.draw do
   get 'admins/editexpert/:id' => 'admins#editexpert', as: 'admins_editexpert'
   patch 'admins/expertedit'
   get 'admins/expertdel/:id' => 'admins#expertdel', as: 'admins_expertdel'
+  get 'admins/trusted'
+  get 'admins/addtrusted'
+  post 'admins/trustcreate'
+  get 'admins/edittrusted/:id' => 'admins#edittrusted', as: 'admins_edittrusted'
+  patch 'admins/trustupdate'
+  get 'admins/trustdel/:id' => 'admins#trustdel', as: 'admins_trustdel'
+  get 'members/tandc'
+  get 'members/privacy'
   
  # Signup Routes
   get 'members/index'
@@ -79,6 +87,9 @@ Rails.application.routes.draw do
   #   resources :products
   root 'cras#index'
   post 'cras/contactus' => 'cras#contactus', as: 'cras_contactus'
+  get 'cras/tandc'
+  get 'cras/privacy'
+
   resources :charges
   get 'charges/checkdetails'
 

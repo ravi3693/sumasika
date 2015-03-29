@@ -26,12 +26,16 @@
               
               <li><a href="#hero" class="hidden">Top</a></li>
 
-              <li><a href="#about">About</a></li>
-              <li><a href="#benefits">Benefits</a></li>
+              <li> <% if session[:user_id].nil? %>
+                  <a href="sessions/new">Login</a>
+                <% else  %>
+                  <a href="sessions/destroy">Logout</a>
+                <% end %></li>
+              <li><a href="members/new">Signup</a></li>
               <li><a href="#how-it-works">How it Works</a></li>
-              <li><a href="#video">Watch Video</a></li>
+              <!-- <li><a href="#video">Watch Video</a></li>
               <li><a href="#team">The Team</a></li>
-              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#pricing">Pricing</a></li> -->
               
               <!-- HEADER ACTION BUTTON -->
              <!--  <li class="header-action-button"><a href="#" class="btn btn-primary">Action Button</a></li> -->

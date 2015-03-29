@@ -84,10 +84,9 @@ class AdminsController < ApplicationController
         Aboutconttent.find_by_id(params[:aboutconttent][:id]).update(:image => params[:aboutconttent][:image]) unless params[:aboutconttent][:image].nil?
         redirect_to admin_aboutsumasika_path
     end
-    
-
-  end
-  def addexperts
+  
+ end
+ def addexperts
     @addexperts=Expert.new()
   end
 
@@ -117,9 +116,45 @@ class AdminsController < ApplicationController
   end
   def expertdel
     @expertdel=Expert.destroy(params[:id])
-    binding.pry
+    
     if @expertdel
       redirect_to admin_experts_path
+    end
+  end
+
+  def trusted
+    @trusted= Trusted.all   
+
+  end
+
+  def addtrusted
+
+     @trusted= Trusted.new()   
+
+  end
+
+  def trustcreate
+    
+    @trusted=Trusted.new(req_trustparams)
+    if @trusted.save
+      redirect_to admins_trusted_path
+     end
+  end
+  def trustupdate
+    
+      @trustupdate=Trusted.find(params[:id]).update(:name => params[:trusted][:name],:description => params[:trusted][:description],:company => params[:trusted][:company],:rating => params[:trusted][:rating])   
+      if @trustupdate
+        redirect_to admins_trusted_path
+      end
+  end
+  def edittrusted
+    @trusted=Trusted.find(params[:id])  
+  end
+  def trustdel
+    @trusted=Trusted.destroy(params[:id])  
+    
+    if @trusted
+      redirect_to admins_trusted_path
     end
   end
 
@@ -131,6 +166,9 @@ class AdminsController < ApplicationController
   end
   def req_expertparams
      params.require(:expert).permit(:name,:designation,:description,:image)    
+  end
+  def req_trustparams
+    params.require(:trusted).permit(:name,:description,:company,:rating)    
   end
 
 end

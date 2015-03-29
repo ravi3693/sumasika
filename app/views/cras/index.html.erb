@@ -43,7 +43,9 @@
 
       <!-- TESTIMONIALS
       ================================= -->
-      <%= render :partial => 'cras/testmonial' %>
+      <% unless @trusted.empty? %>
+        <%= render :partial => 'cras/testmonial' %>
+      <% end %>
 
       <!-- CLOSING
       ================================= -->

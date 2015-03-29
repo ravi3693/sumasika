@@ -24,7 +24,13 @@
             <!-- NUMBERS - ITEM 2 -->
             <div class="col-md-3 col-sm-6">
               <div class="numbers-item">
-                <div class="numbers-item-counter"><span class="counter-up">754</span>k</div>
+                <div class="numbers-item-counter"><span class="counter-up">
+                <%if @members.nil? %>
+                <div>0</div>
+                <%else %>
+                <%=@members %>
+                <%end %>
+                </div>
                 <div class="numbers-item-caption">Total Users</div>
               </div>
             </div>
