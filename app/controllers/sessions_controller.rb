@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   before_action :user_dashboard, only: [:new, :create]
   before_action :admin_dashboard, only: [:admin, :creators]
   before_action :migrate_dashboard
-
+layout 'members'
   def new
     redirect_to dashboard_index_path unless session[:user_id].nil?
   end
@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
   	if !@user.nil? && BCrypt::Password.new(@user.password) == params[:password] && @user.active == 1
 		  # need to find alternative to session later on ...
       session[:user_id] = @user.id
-  		redirect_to dashboard_index_path, :flash => { :notice => "Welcome to sumasika" }
+  		redirect_to dashboard_index_path, :flash => { :notice => "Welcome to sumasika, Tell us where you want to send money today and beat the bank fees!" }
   	else
   		redirect_to sessions_new_path , :flash => { :error => "User credentials does not exists" }
   	end
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
     if !@manager.nil? && BCrypt::Password.new(@manager.password) == params[:password]
       if @manager.active
         session[:manager_id] = @manager.id
-        redirect_to admin_path, :notice => "Welcome to sumasika"
+        redirect_to admin_path, :notice => "Welcome to sumasika, Tell us where you want to send money today and beat the bank fees!"
       else
         redirect_to admin_sessions_new_path, :notice => "Admin needs to activate your account"
       end

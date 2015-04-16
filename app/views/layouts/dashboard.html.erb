@@ -14,27 +14,45 @@
   <![endif]-->
     <!--HTML Widget code-->
   
-			<!--[if gte IE 8] -->
-				<!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"> -->
+      <!--[if gte IE 8] -->
+        <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"> -->
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-			<!-- <![endif]-->
-			<!--[if IE 7]>
-				<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
-			<![endif]-->
-			<style>
-				.icon-block:before, .icon-block {
-					display: block;
-				}
-			</style>
+      <!-- <![endif]-->
+      <!--[if IE 7]>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css" rel="stylesheet">
+      <![endif]-->
+      <style>
+        .icon-block:before, .icon-block {
+          display: block;
+        }
+      </style>
 
-		
+    
  </head>
  <body style="background:#e8ebef">
-
+<%=  render :partial => 'layouts/mheader' %>
  <%= render :partial => 'layouts/alert' %>
   
- <div id="header" class="row">
+ <div id="header" class="row" style="margin-left:0%;margin-right:0% padding-left:0%;padding-right:0px; padding-left:0px;">
      <h1><a href="/">Sumasika</a></h1>
+     <div class="well" style="border:none;background-color:rgb(232, 235, 239);padding-left: 0%;padding-top: 0%;width: 1291px;padding-right:0%">
+
+<div class="b-dashboard-hero">
+  
+    
+  
+  <!-- <ul class="b-dashboard-hero__menu">
+    <li class="b-dashboard-hero__menu-item"><a href="/recipients">My Recipients</a></li>
+    
+      
+        <li class="b-dashboard-hero__menu-item"><a href="#">Invite &amp; earn</a></li>
+      
+    
+    <li class="b-dashboard-hero__menu-item"><a href="#">My settings</a></li>
+  </ul> -->
+</div>
+</div>
+  
      <div class="navigation">
      <div class="account-dropdown-view" id="dropdownview" style="cursor:pointer">
        <a class="account">
@@ -93,8 +111,9 @@
           </ul>
        </div>    
      <div class="col-xs-10">
- 			<%= yield %>      
- 		 </div>
+      <%= yield %> 
+      <%= render :partial => 'layouts/inerfooter' %>     
+     </div>
    </div>
  </div>
  <% #render :partial => 'layouts/footer' %> 

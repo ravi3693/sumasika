@@ -1,0 +1,53 @@
+<style>
+  .navbar-default .navbar-nav > li > a {
+color: #E6F7F0;
+font-size:16px
+}
+</style>
+<div >
+<nav class="navbar navbar-default"style="
+    background-color: rgb(159, 124, 82);
+    border: none;opacity:0.5
+" >
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+      <%= image_tag 'Sumasika.png' %>
+        
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+        
+              <li style="color:white"><a href="<%=root_url%>">Home</a></li>
+              <li style="color:white"> <% if session[:user_id].nil? %>
+                  <a href="<%=sessions_new_path%>">Login</a>
+                <% else  %>
+                  <a href="<%=sessions_destroy_path%>">Logout</a>
+                <% end %></li>
+
+              <li><% if session[:user_id].nil? %><a href="<%=members_new_path%>">Signup</a>
+              <%else %>
+              <a href="<%=dashboard_index_path %>">My Profile</a>
+              <%end %>
+              </li>
+              </li>
+              <li><a href="#how-it-works">How it Works</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</div>

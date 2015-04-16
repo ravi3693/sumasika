@@ -1,5 +1,6 @@
 class DashboardController < ApplicationController
 before_action :authenticated 
+
   def index
     @temporary = 1 	
     @user=my_session

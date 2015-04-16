@@ -13,9 +13,9 @@
             </button>
 
             <!-- HEADER LOGO -->
-            <a class="navbar-logo navbar-brand anchor-link" href="#hero">
+            <!-- <a class="navbar-logo navbar-brand anchor-link" href="#hero">
               <img src="assets/Sumasika.png" alt="Sumasika logo">
-            </a>
+            </a> -->
 
           </div>
 
@@ -31,7 +31,11 @@
                 <% else  %>
                   <a href="sessions/destroy">Logout</a>
                 <% end %></li>
-              <li><a href="members/new">Signup</a></li>
+              <li><% if session[:user_id].nil? %><a href="members/new">Signup</a>
+              <%else %>
+              <a href="<%=dashboard_index_path %>">My Profile</a>
+              <%end %>
+              </li>
               <li><a href="#how-it-works">How it Works</a></li>
               <!-- <li><a href="#video">Watch Video</a></li>
               <li><a href="#team">The Team</a></li>
