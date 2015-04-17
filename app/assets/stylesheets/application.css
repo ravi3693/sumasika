@@ -17,4 +17,10 @@
  *= require style
  *= require nprogress
  *= require nprogress-bootstrap
+ *= require_self
+ *= require_tree
+ *= require_self
+ *= require jquery.ui
+ *= require bootstrap-datepicker
+ *= require jquery.timepicker
  */

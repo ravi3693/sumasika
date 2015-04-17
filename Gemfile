@@ -6,6 +6,7 @@ gem 'rails', '4.2.0.rc3'
 # Use sqlite3 as the database for Active Record
 group :production do
    gem 'pg', '0.17.1'
+   gem 'rails_12factor'
 end
 
 group :assets do
@@ -15,6 +16,8 @@ group :assets do
   gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
   gem 'coffee-rails', '~> 4.1.0'
+
+  gem 'jquery-ui-rails'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -62,5 +65,3 @@ gem 'twilio-ruby', '~> 3.12'
 gem 'phonelib'
 gem 'nprogress-rails'
 gem 'ckeditor_rails'
-
-gem 'rails_12factor', group: :production

@@ -15,5 +15,9 @@
 //= require ckeditor-jquery
 //= require turbolinks
 //= require nprogress
+//= require jquery-ui
+//= require jquery_ujs
+//= require wice_grid
+//= require fullcalendar
 //= require nprogress-turbolinks
 //= require_tree .
