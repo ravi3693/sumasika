@@ -6,7 +6,6 @@ gem 'rails', '4.2.0.rc3'
 # Use sqlite3 as the database for Active Record
 group :production do
    gem 'pg', '0.17.1'
-   gem 'rails_12factor', '0.0.2'
 end
 
 group :assets do
@@ -63,3 +62,5 @@ gem 'twilio-ruby', '~> 3.12'
 gem 'phonelib'
 gem 'nprogress-rails'
 gem 'ckeditor_rails'
+
+gem 'rails_12factor', group: :production
